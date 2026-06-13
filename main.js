@@ -1,23 +1,12 @@
-let contentsBounds = document.body.getBoundingClientRect();
-let width = 800;
-let height = 500;
-let ratio = contentsBounds.width / width;
-width *= ratio;
-height *= ratio;
-
-functionPlot({
-  target: "#func",
-  width,
-  height,
-  yAxis: { domain: [-1, 9] },
-  grid: true,
-  data: [
-    {
-      fn: "x^2",
-      derivative: {
-        fn: "2 * x",
-        updateOnMouseMove: true
-      }
-    }
-  ]
-});
+function hideCommon() {
+    document.getElementById("commonDefTxt").style.display = "none";
+    document.getElementById("formalDefTxt").style.display = "block";
+    document.getElementById("formalDef").style.backgroundColor = "black";
+    document.getElementById("commonDef").style.backgroundColor = "";
+}
+function hideFormal() {
+    document.getElementById("commonDefTxt").style.display = "block";
+    document.getElementById("formalDefTxt").style.display = "none";
+    document.getElementById("commonDef").style.backgroundColor = "black";
+    document.getElementById("formalDef").style.backgroundColor = "";
+}
