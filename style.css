@@ -92,6 +92,10 @@ body {
   display: flex;
   flex-direction: row;
   gap: 20px;
+  #about-me {
+    position: absolute;
+    right: 5em;
+  }
   a {
     color: black;
     text-decoration: none;
