@@ -1,9 +1,6 @@
 let contentsBounds = document.body.getBoundingClientRect();
-let width = 800;
-let height = 500;
-let ratio = contentsBounds.width / width;
-width *= ratio;
-height *= ratio;
+let width = document.getElementById("func").offsetWidth;
+let height = 1250;
 
 functionPlot({
   target: "#func",

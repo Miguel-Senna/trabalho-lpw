@@ -24,8 +24,8 @@ body {
   grid-template-columns: 0.5fr 0.5fr;
   grid-template-rows: auto auto auto;
   color: white;
-  margin-left: 22%;
-  margin-right: 22%;
+  margin-left: 5%;
+  margin-right: 5%;
   font-size: 23px;
 
   header {
@@ -110,6 +110,9 @@ body {
 
 #func {
   background: #d9d9d9;
+  width: 65%;
+  float: right;
+  height: auto;
 }
 
 .inline-block {
