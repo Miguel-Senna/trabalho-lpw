@@ -8,11 +8,30 @@
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
   <title>Grafico da função</title>
   <script defer src="https://unpkg.com/function-plot/dist/function-plot.js"></script>
-  <script defer src="func.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="func"></div>
+  <div id="content-funcplot" class="inter">
+
+    <h1>CALCULADORA GRÁFICA</h1>
+
+      <div id="input">
+
+        <article>
+        <input type="text" id="fn" placeholder="Formula da função">
+
+        <button class="submit-fn">Enviar</button>
+        </article>
+        <br><br>
+
+        <article id="checkboxes">
+          grid: 
+          <input type="checkbox" name="" id="gridPresence">
+        </article>
+
+      </div>
+  </div>
   
   <div class="menu" class="intel-mono">
     <article>MENU —</article>
@@ -23,5 +42,6 @@
     <a href="func-types.html">TIPOS DE FUNÇÃO</a>
     <a id="about-me" href="about-me.html">SOBRE MIM</a>
   </div>
+  <script src="func.js"></script>
 </body>
 </html>

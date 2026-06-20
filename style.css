@@ -139,3 +139,43 @@ body {
 #formalDefTxt {
   display: none;
 }
+
+#content-funcplot {
+  margin-left: 50px;
+  article {
+    background-color: #E83E1C;
+    width: 610px;
+    padding: 5px 5px;
+  }
+  #checkboxes {
+    width: 80px;
+  }
+  input:not([type="checkbox"]){
+    width: 500px;
+    border-style: hidden;
+    background-color: #E83E1C;
+    color: white;
+    transition: all 0.4s;
+    
+    &:focus {
+      background-color: #303030;
+    }
+    &:hover {
+      background-color: #303030;
+    }
+
+  }
+  button {
+    border-radius: 0%;
+    border-style: hidden;
+    background-color: #303030;
+    color: white;
+    transition: all 0.4s;
+    width: 100px;
+    
+    &:hover {
+      background-color: #fff;
+      color: #303030;
+    }
+  }
+}
