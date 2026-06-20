@@ -1,16 +1,17 @@
 let width = document.getElementById("func").offsetWidth;
-let height = 1200;
+let height = width/2;
 const inputFn = document.getElementById("fn");
 const buttonFn = document.getElementById("submit-fn");
 const getGridState = document.getElementById("gridPresence");
 
 getGridState.checked = true;
 
-buttonFn.addEventListener("click", function () {
+function plot() {
   const fnInput = inputFn.value.trim();
 
   if (!fnInput) {
-    alert("Please enter a function.");
+    alert("Por favor forneça uma funçao");
+    console.log("Failed to plot with outcome: expected arguments (char 1)");
     return;
   }
 
@@ -20,7 +21,8 @@ buttonFn.addEventListener("click", function () {
     const derived = math.derivative(node, "x");
     derivInput = derived.toString();
   } catch (e) {
-    alert("Could not parse function or compute its derivative: " + e.message);
+    console.log("Failed to plot with outcome: " + e.message);
+    alert("Função incompleta ou invalida, por favor tente novamente")
     return;
   }
 
@@ -35,7 +37,7 @@ buttonFn.addEventListener("click", function () {
       grid: getGridState.checked,
       data: [
         {
-          fn: "x * 2",
+          fn: fnInput,
           derivative: {
             fn: derivInput,
             updateOnMouseMove: true,
@@ -44,6 +46,9 @@ buttonFn.addEventListener("click", function () {
       ],
     });
   } catch (e) {
-    alert("Could not plot function: " + e.message);
+    console.log("Could not plot function: " + e.message);
+    alert("Função invalida, por favor tente novamente")
   }
-});
+}
+
+buttonFn.addEventListener("click", plot);
