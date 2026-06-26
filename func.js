@@ -1,33 +1,55 @@
 let width = document.getElementById("func").offsetWidth;
-let height = width/2;
-const inputFn = document.getElementById("fn");
-const buttonFn = document.getElementById("submit-fn");
+let height = window.innerHeight-120;
 const getGridState = document.getElementById("gridPresence");
+const addFnButton = document.getElementById("add-fn");
+const submitButton = document.getElementById("submit-fn");
+const inputsContainer = document.getElementById("fn-inputs");
 
 getGridState.checked = true;
 
-function plot() {
-  const fnInput = inputFn.value.trim();
+// Add a new input field
+addFnButton.addEventListener("click", function () {
+  const input = document.createElement("input");
+  input.type = "text";
+  input.placeholder = "Formula da função";
+  input.classList.add("fn");
+  inputsContainer.appendChild(input);
+});
 
-  if (!fnInput) {
-    alert("Por favor forneça uma funçao");
-    console.log("Failed to plot with outcome: expected arguments (char 1)");
-    return;
+function plot() {
+  const fnInputs = [...document.querySelectorAll(".fn")];
+  const data = [];
+
+  for (const input of fnInputs) {
+    const fnInput = input.value.trim();
+    if (!fnInput) continue;
+
+    let derivInput;
+    try {
+      const node = math.parse(fnInput);
+      const derived = math.derivative(node, "x");
+      derivInput = derived.toString();
+    } catch (e) {
+      alert("Could not parse: " + fnInput + "\n" + e.message);
+      return;
+    }
+
+    data.push({
+      fn: fnInput,
+      derivative: {
+        fn: derivInput,
+        updateOnMouseMove: true,
+      },
+    });
   }
 
-  let derivInput;
-  try {
-    const node = math.parse(fnInput);
-    const derived = math.derivative(node, "x");
-    derivInput = derived.toString();
-  } catch (e) {
-    console.log("Failed to plot with outcome: " + e.message);
-    alert("Função incompleta ou invalida, por favor tente novamente")
+  if (data.length === 0) {
+    alert("Please enter at least one function.");
     return;
   }
 
   width = document.getElementById("func").offsetWidth;
-
+  
   try {
     functionPlot({
       target: "#func",
@@ -35,20 +57,11 @@ function plot() {
       height,
       yAxis: { domain: [-1, 9] },
       grid: getGridState.checked,
-      data: [
-        {
-          fn: fnInput,
-          derivative: {
-            fn: derivInput,
-            updateOnMouseMove: true,
-          },
-        },
-      ],
+      data,
     });
   } catch (e) {
-    console.log("Could not plot function: " + e.message);
-    alert("Função invalida, por favor tente novamente")
+    alert("Could not plot: " + e.message);
   }
 }
 
-buttonFn.addEventListener("click", plot);
+submitButton.addEventListener("click", plot);
