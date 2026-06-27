@@ -1,5 +1,19 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-bg-color: #303030;
+    --primary-txt-color: white;
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary-bg-color: white;
+    --primary-txt-color: #000000;
+  }
+  
+}
+
 body {
-  background-color: #303030;
+  background-color: var(--primary-bg-color);
 }
 
 #types {
@@ -9,6 +23,18 @@ body {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto;
+    text-align: center;
+    & > * {
+      background-color: #4c848d;
+      border: 5px solid white;
+      border-radius: 20px;
+      margin: 70px 100px;
+      width: 20vw;
+      font-size: 40px;
+      height: 86vh;
+      text-align: justify;
+      padding: 0px 40px;
+    }
 
     #box1{
       grid-column: 1 / 2;
@@ -61,4 +87,24 @@ body {
   font-weight: 300;
   font-style: normal;
   color: white;
+}
+
+#enlarged {
+  display: none;
+  position: absolute;
+  left: calc(50% - calc(588px / 2));
+  top: 20px;
+  z-index: 999;
+
+  font-size: 50px;
+}
+#enlarged-overlay {
+  display: none;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
 }

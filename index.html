@@ -20,6 +20,13 @@
         <h3>E SUAS TECNOLOGIA: Função quadratica, Função afim e outras</h3>
     </div>
     -->
+    <div id="popupOverlay" class="overlay" class="intel-mono">
+        <div class="popup-box">
+            <h2>Bem-vindo</h2>
+            <p>Esta Web page é melhor visualisada no modo escuro, deseja continuar mesmo assim?</p>
+            <button onclick="hidepopup()">Continuar</button>
+        </div>
+    </div>
     <div id="content" class="inter">
         <header>
             <h1>FUNÇÕES MATEMÁTICAS</h1>
@@ -32,7 +39,7 @@
                     <button id="commonDef" onclick="hideFormal()">DEFINIÇÃO COMUM</button>
                     <button id="formalDef" onclick="hideCommon()">DEFINIÇÃO FORMAL</button>
                 </div>
-                <p id="commonDefTxt">
+                <p id="commonDefTxt" class="def">
                     Representação esquemática de uma função descrita metaforicamente como uma "máquina" ou "caixa preta" que para cada entrada produz uma saída correspondente
                     A curva vermelha é o gráfico de uma função, porque qualquer linha vertical tem exatamente um ponto de cruzamento com a curva.
 
@@ -40,7 +47,7 @@
 
                     Se o elemento y em Y é atribuído a x em X pela função f, diz-se que f mapeia x em y, e isso é comumente escrito como <math>y = f ( x )</math>. Nesta notação, x é o argumento ou variável da função.
                 </p>
-                <p id="formalDefTxt">
+                <p id="formalDefTxt" class="def">
                     A definição de função acima é essencialmente a dos fundadores do cálculo, Leibniz, Newton e Euler. No entanto, ela não pode ser formalizada, pois não há uma definição matemática para uma "atribuição".
                     Foi apenas no final do século XIX que a primeira definição formal de uma função pôde ser fornecida, em termos da teoria dos conjuntos.
                     Essa definição teórica de conjuntos é baseada no fato de que uma função estabelece uma relação entre os elementos do domínio e alguns (possivelmente todos) elementos do contradomínio.

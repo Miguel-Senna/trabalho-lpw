@@ -44,7 +44,7 @@ function plot() {
   }
 
   if (data.length === 0) {
-    alert("Please enter at least one function.");
+    alert("Por favor selecione pelo menos uma funcao");
     return;
   }
 
@@ -60,7 +60,7 @@ function plot() {
       data,
     });
   } catch (e) {
-    alert("Could not plot: " + e.message);
+    alert("Grafico nao produzido com erro: " + e.message);
   }
 }
 
