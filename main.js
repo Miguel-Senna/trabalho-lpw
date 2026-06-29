@@ -20,13 +20,7 @@ function displayelement() {
     document.getElementById("enlarged").style.display = "block";
     document.getElementById("enlarged-overlay").style.display = "block";
 }
-function selectFunc_afim() {
-    displayelement();
-    document.getElementById("large-title").textContent = "Função afim";
+if (navigator.userAgent.toLowerCase().includes("firefox")) {
+    document.getElementById("warning").style.display = "none";
+    document.getElementById("popupOverlay").style.display = "none";
 }
-function hideelement() {
-    document.getElementById("enlarged").style.display = "none";
-    document.getElementById("enlarged-overlay").style.display = "none";
-}
-
-document.getElementById("enlarged-overlay").onclick = hideelement();
