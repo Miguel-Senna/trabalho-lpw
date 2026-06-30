@@ -10,6 +10,7 @@ body {
         margin-top: auto;
         margin-bottom: auto;
         display: flex;
+        
         img{
             border-radius: 50%;
             float: left;
@@ -54,6 +55,15 @@ body {
   font-weight: 700;
   font-style: normal;
   color: white;
+}
+
+#creditos {
+  position: absolute;
+  right: 70px;
+  top: calc(50% - calc(234px / 2));
+  a {
+    color: #E83E1C;
+  }
 }
 
 .menu {
