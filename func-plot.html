@@ -10,8 +10,28 @@
   <script defer src="https://unpkg.com/function-plot/dist/function-plot.js"></script>
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
+  <meta name="view-transition" content="same-origin" />
+  <script src="func.js" defer></script>
+  <script src="main.js"> defer</script>
+  <link rel="stylesheet" href="menu.css">
+  <!--Fonts import-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!--Fonts import end-->
 </head>
 <body>
+  <div class="menu intel-mono">
+    <article>MENU</article>
+    <article>—</article>
+    <a href="index.html">PÁGINA PRINCIPAL</a>
+    <article>—</article>
+    <a href="func-plot.html">CALCULADORA GRÁFICA</a>
+    <article>—</article>
+    <a href="func-types.html">TIPOS DE FUNÇÃO</a>
+    <a id="about-me" href="about-me.html">SOBRE MIM</a>
+  </div>
+  <main id="func-plot">
     <div id="func"></div>
     <div id="content-funcplot" class="inter">
 
@@ -36,17 +56,7 @@
           </article>
         </div>
     </div>
-  
-  <div class="menu" class="intel-mono">
-    <article>MENU</article>
-    <article>—</article>
-    <a href="index.html">PÁGINA PRINCIPAL</a>
-    <article>—</article>
-    <a href="func-plot.html">CALCULADORA GRÁFICA</a>
-    <article>—</article>
-    <a href="func-types.html">TIPOS DE FUNÇÃO</a>
-    <a id="about-me" href="about-me.html">SOBRE MIM</a>
-  </div>
-  <script src="func.js"></script>
+  </main>
+  <div class="shine-background" id="shineBg"></div>
 </body>
 </html>

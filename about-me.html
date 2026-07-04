@@ -5,13 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="about-me.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <meta name="view-transition" content="same-origin" />
+    <link rel="stylesheet" href="menu.css">
     <title>Sobre mim / about me</title>
+    <!--Fonts import-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!--Fonts import end-->
 </head>
 <body>
+    <div class="menu intel-mono">
+        <article id="menu" class="select-background">MENU<div></div></article>
+        <article>—</article>
+        <a href="index.html" class="select-background">PÁGINA PRINCIPAL<div></div></a>
+        <article>—</article>
+        <a href="func-plot.html" class="select-background">CALCULADORA GRÁFICA<div></div></a>
+        <article>—</article>
+        <a href="func-types.html" class="select-background">TIPOS DE FUNÇÃO<div></div></a>
+
+        <a id="about-me" href="about-me.html">SOBRE MIM</a>
+    </div>
+
     <div id="content" class="inter">
         <h1 id="title">SOBRE MIM:</h1>
         <div>
-            <a href="https://github.com/Miguel-Senna"><img src="https://avatars.githubusercontent.com/u/272352724?v=4" alt="https://github.com/Miguel-Senna" srcset=""></a>
+            <a href="https://github.com/Miguel-Senna" target="_blank"><img src="https://media-gru2-1.cdn.whatsapp.net/v/t61.24694-24/715949876_1532966301043979_5381818083249191762_n.jpg?ccb=11-4&oh=01_Q5Aa4wF9qQQw6tI8NxXa2WfgnNEgJM5UChbvH2vKvxShI7IjyQ&oe=6A553F20&_nc_sid=5e03e0&_nc_cat=101" alt="https://github.com/Miguel-Senna" srcset=""></a>
             <div>
                 <p>
                     <h1>Miguel<br>Senna</h1>
@@ -21,31 +40,30 @@
             </div>
         </div>
     </div>
-    <div id="creditos" class="inter">
+    <div id="creditos" class="intel-mono">
             <h1>Creditos:</h1>
             <ul>
-                <li>video disponivel <a href="https://www.youtube.com/watch?v=6OkI2V-kUo4&t=1s"><strong>AQUI</strong></a></li>
+                <li>video disponivel <a href="https://www.youtube.com/watch?v=6OkI2V-kUo4&t=1s" target="_blank"><strong>AQUI</strong></a></li>
                 <li>
-                    Fontes:
+                    Fontes (sobre licensa: <a href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_4.0_International_License">Creative Commons 4.0 International</a>):
                     <ul>
-                        <li>Informacoes sobre <strong>FUNÇÃO</strong> disponiveis em: <a href="https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_(matem%C3%A1tica)">pt.wikipedia.org</a></li>
-                        <li>Informacoes sobre função <strong>AFIM</strong> disponiveis em: <a href="https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_afim">pt.wikipedia.org/Função_afim</a></li>
-                        <li>Informacoes sobre função <strong>QUADRATICA</strong> disponiveis em: <a href="https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_quadr%C3%A1tica">pt.wikipedia.org/Função_quadrática</a></li>
-                        <li>Informacoes sobre função <strong>MODULAR</strong> disponiveis em: <a href="https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_modular">pt.wikipedia.org/Função_modular</a></li>
+                        <li>Informacoes sobre <strong>FUNÇÃO</strong> disponiveis em: <a href="https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_(matem%C3%A1tica)" target="_blank">pt.wikipedia.org</a></li>
+                        <li>Informacoes sobre função <strong>AFIM</strong> disponiveis em: <a href="https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_afim" target="_blank">pt.wikipedia.org/Função_afim</a></li>
+                        <li>Informacoes sobre função <strong>QUADRATICA</strong> disponiveis em: <a href="https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_quadr%C3%A1tica" target="_blank">pt.wikipedia.org/Função_quadrática</a></li>
+                        <li>Informacoes sobre função <strong>MODULAR</strong> disponiveis em: <a href="https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_modular" target="_blank">pt.wikipedia.org/Função_modular</a></li>
+                    </ul>
+                </li>
+                <li>Este software usa de material da biblioteca <a href="https://mauriciopoppe.github.io/function-plot/" target="_blank">func-plot.js</a> sob licensa do <a href="https://opensource.org/license/mit" target="_blank">mit.</a></li>
+                <li>Este software foi produzido sem o uso de LLMs. <a href="https://www.stopai.info/" target="_blank">STOP AI</a></li>
+                <li>Este software usa tecnologias proprietarias de:
+                    <ul>
+                        <li><a href="https://sfconservancy.org/" target="_blank">Software freedom conservancy</a>, sobre licensa <a href="https://opensource.org/license/GPL-2.0" target="_blank">GNU GPL-2</a></li>
+                        <li><a href="https://rsms.me/inter/" target="_blank">Rasmus Andersson</a> sobre licensa <a href="https://openfontlicense.org/" target="_blank">SIL Open Font License</a></li>
+                        <li><a href="https://github.com/googlefonts/intel-one-mono" target="_blank">Intel Corporation</a> sobre licensa <a href="https://openfontlicense.org/" target="_blank">SIL Open Font License</a></li>
+                        <li><a href="https://github.com/Microsoft/vscode">Microsoft Corporation</a> sobre licensa <a href="https://code.visualstudio.com/license">MIT License</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
-
-    <div class="menu" class="intel-mono">
-        <article>MENU</article>
-        <article>—</article>
-        <a href="index.html">PÁGINA PRINCIPAL</a>
-        <article>—</article>
-        <a href="func-plot.html">CALCULADORA GRÁFICA</a>
-        <article>—</article>
-        <a href="func-types.html">TIPOS DE FUNÇÃO</a>
-        <a id="about-me" href="about-me.html">SOBRE MIM</a>
-    </div>
 </body>
 </html>

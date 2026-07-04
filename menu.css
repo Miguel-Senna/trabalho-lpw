@@ -1,0 +1,67 @@
+.menu {
+  position: sticky;
+  color: black;
+  
+  background-color: #d9d9d9;
+  padding: 10px 30px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  #about-me {
+    position: absolute;
+    right: 90px;
+  }
+  #menu {
+    cursor: pointer;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:active {
+      color: darkslateblue;
+    }
+  }
+  aside {
+    position: absolute;
+    top: 53px;
+    left: -60px;
+    background-color: #b9b9b9;
+    height: 100px;
+    font-size: 30px;
+    padding: 0px 10px;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    &:hover {
+        background-color: #d9d9d9;
+    }
+  }
+}
+
+.intel-mono {
+  font-family: "Intel One Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.menu .show-dropdown {
+    left: 0;
+}
+.shine-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    1000px circle at var(--mouse-x) var(--mouse-y),
+    #e83e1c10,
+    #e83e1c08 50%, 
+    transparent 100%
+  );
+}

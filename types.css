@@ -1,121 +1,73 @@
 :root {
-  --primary-bg-color: #303030;
+  --primary-bg-color: #121212;
   --primary-txt-color: white;
+  --secondary-txt-color: black;
+  --accent-color: #E83E1C;
+  overflow-x: hidden;
+  interpolate-size: allow-keywords;
 }
-
 @media (prefers-color-scheme: light) {
   :root {
-    --primary-bg-color: white;
-    --primary-txt-color: #000000;
+    --primary-bg-color: #ffffff;
+    --primary-txt-color: black;
+    --secondary-bg-color: #0000005f;
+    --secondary-txt-color: white;
   }
+}
 
+@starting-style {
+  main article {
+    transform: translateY(2000px) !important;
+  }
 }
 
 body {
   background-color: var(--primary-bg-color);
+  color: var(--primary-txt-color);
 }
-#settings {
-  background-color: white;
-}
-
-#types {
-  color: white;
-
+#content {
+  
   main {
     display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto;
-    text-align: center;
-    & > * { /* Descritor generico para elementos da tag: box */
-      background-color: #4c848d;
-      border: 5px solid white;
-      border-radius: 20px;
-      margin: 70px 100px;
-      width: 20vw;
-      font-size: 40px;
-      height: 86vh;
-      text-align: justify;
-      padding: 0px 40px;
-      z-index: 1;
-      transition: all 0.2s;
+    width: fit-content;
+    grid-template-columns: clamp(0px, 30vw, 800px) clamp(0px, 30vw, 800px) clamp(0px, 30vw, 800px);
+    grid-template-rows: auto 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    height: 95vh;
+    transition: all 1s;
+    perspective: 1000px;
+    article {
+      transform: translateY(0px);
+      text-align: center;
+      margin: 50px 20px;
+      border-radius: 10px;
+      background-color: #ffffff0f;
+      transition: all 1s;
+      
+      header > h1 {
+        font-size: 50px;
+        text-transform: uppercase;
+        background-color: var(--accent-color);
+        margin-left: 40px;
+        margin-right: 40px;
+      }
       &:hover {
-        transform: scale(1.1);
-      }
-
-      p {
-        max-height: 750px;
-        overflow: auto;
+        background-color: #ffffff1f;
+        transform: scale(1.05);
       }
     }
-
-    #box1{
-      grid-column: 1 / 2;
+    #box1 {
+      box-shadow: -5px 5px 10px black, 5px -5px 10px rgba(255, 255, 255, 0.1);
     }
-    #box2{
-      grid-column: 2 / 3;
+    #box2 {
+      box-shadow: 0px 5px 10px black, 0px -5px 10px rgba(255, 255, 255, 0.1);
     }
-    #box3{
-      grid-column: 3 / 4;
-    }
-  }
-}
-#enlarged {
-  display: none;
-  /* display: flex; */
-  
-  font-size: 40px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  flex-direction: column;
-  backdrop-filter: blur(10px);
-  z-index: 900;
-  align-items: center;
-  p {
-    width: 30vw;
-    display: none;
-    height: 98vh;
-    overflow: auto;
-  }
-}
-
-.menu {
-  position: fixed;
-  z-index: 100;
-  bottom: 0px;
-  left: 0px;
-  background-color: #d9d9d9;
-  padding: 10px 30px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  #about-me {
-    position: absolute;
-    right: 7em;
-  }
-
-  a {
-    color: black;
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
-    &:active {
-      color: darkslateblue;
+    #box3 {
+      box-shadow: 5px 5px 10px black, -5px -5px 10px rgba(255, 255, 255, 0.1);
     }
   }
 }
-.intel-mono {
-  font-family: "Intel One Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 20px;
-}
-
 .inter {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -124,17 +76,39 @@ body {
   color: white;
 }
 
-@media (max-width: 2000px) {
-  #types {
-    main {
-      display: flex;
-      flex-direction: column;
-      & > *{
-        width: 86vw;
-        height: auto;
-        margin-left: auto;
-        margin-right: auto;
-      }
-    }
-  } 
+@supports (interpolate-size: allow-keywords) {
+  .select-background:hover div {
+    width: auto;
+  }
+  .select-background div {
+    background-color: #E83E1C;
+    height: 1.3em;
+    margin-top: -1.3em;
+    width: 0;
+    transition: width 0.3s;
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+}
+
+main:hover {
+  article {
+    opacity: 0.5 !important;
+    transform: scale(0.9);
+  }
+  #box1 {
+    transform:rotatey(3deg)
+  }
+  #box3 {
+    transform:rotatey(-3deg)
+  }
+}
+
+main article:hover {
+  opacity: 1 !important;
+}
+
+::selection {
+  background-color: var(--accent-color);
+  color: var(--secondary-txt-color);
 }

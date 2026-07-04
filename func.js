@@ -1,5 +1,5 @@
 let width = document.getElementById("func").offsetWidth;
-let height = window.innerHeight-120;
+let height = document.getElementById("func").offsetHeight;
 const getGridState = document.getElementById("gridPresence");
 const addFnButton = document.getElementById("add-fn");
 const submitButton = document.getElementById("submit-fn");

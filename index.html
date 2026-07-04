@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <link rel="stylesheet" href="style.css">
     <script defer src="main.js"></script>
+    <meta name="view-transition" content="same-origin" />
+    <link rel="stylesheet" href="menu.css">
     <!--Fonts import-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,14 +15,21 @@
     <!--Fonts import end-->
 </head>
 <body>
-    
-    <div id="popupOverlay" class="overlay" class="intel-mono">
-        <div class="popup-box">
-            <h2>Bem-vindo</h2>
-            <p>Esta Web page é melhor visualisada no <strong>FIREFOX</strong>, deseja continuar mesmo assim?</p>
-            <button onclick="hidepopup()">Continuar</button>
-        </div>
+    <div class="menu intel-mono">
+        <article id="menu" class="select-background">MENU<div></div></article>
+        <article>—</article>
+        <a href="index.html" class="select-background">PÁGINA PRINCIPAL<div></div></a>
+        <article>—</article>
+        <a href="func-plot.html" class="select-background">CALCULADORA GRÁFICA<div></div></a>
+        <article>—</article>
+        <a href="func-types.html" class="select-background">TIPOS DE FUNÇÃO<div></div></a>
+
+        <a id="about-me" href="about-me.html">SOBRE MIM</a>
+        <aside id="dropdown">
+            <article>⚙</article>
+        </aside>
     </div>
+    
     <div id="content" class="inter">
         <header>
             <h1>FUNÇÕES MATEMÁTICAS</h1>
@@ -29,11 +38,11 @@
         <iframe width="900" height="500" src="https://www.youtube.com/embed/6OkI2V-kUo4" title="O que é uma Função? Entenda tudo em 18 minutos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <main>
             <div>
-                <div class="inline-block">
+                <div class="inline-block" id="text-select">
                     <button id="commonDef" onclick="hideFormal()">DEFINIÇÃO COMUM</button>
                     <button id="formalDef" onclick="hideCommon()">DEFINIÇÃO FORMAL</button>
                 </div>
-                <p id="commonDefTxt" class="def">
+                <p id="commonDefTxt" class="def type">
                     Representação esquemática de uma função descrita metaforicamente como uma "máquina" ou "caixa preta" que para cada entrada produz uma saída correspondente
                     A curva vermelha é o gráfico de uma função, porque qualquer linha vertical tem exatamente um ponto de cruzamento com a curva.
 
@@ -41,7 +50,7 @@
 
                     Se o elemento y em Y é atribuído a x em X pela função f, diz-se que f mapeia x em y, e isso é comumente escrito como <math>y = f ( x )</math>. Nesta notação, x é o argumento ou variável da função.
                 </p>
-                <p id="formalDefTxt" class="def">
+                <p id="formalDefTxt" class="def type">
                     A definição de função acima é essencialmente a dos fundadores do cálculo, Leibniz, Newton e Euler. No entanto, ela não pode ser formalizada, pois não há uma definição matemática para uma "atribuição".
                     Foi apenas no final do século XIX que a primeira definição formal de uma função pôde ser fornecida, em termos da teoria dos conjuntos.
                     Essa definição teórica de conjuntos é baseada no fato de que uma função estabelece uma relação entre os elementos do domínio e alguns (possivelmente todos) elementos do contradomínio.
@@ -50,31 +59,22 @@
                 </p>
             </div>
         </main>
-        <footer>  
-            <p>
-                Uma função é frequentemente denotada por uma letra como f, g ou h. O valor de uma função f num elemento x de seu domínio (isto é, o elemento do contradomínio que está associado a x) é denotado por f(x);
-                por exemplo, o valor de f em x = 4 é denotado por f(4). Comumente, uma função específica é definida por meio de uma expressão dependente de x, como <math>f ( x ) = x 2 + 1</math>;
-                neste caso, algum cálculo, chamado de avaliação da função, pode ser necessário para deduzir o valor da função num valor particular; por exemplo, se <math>f ( x ) = x 2 + 1</math>,
-                então <math>f ( 4 ) = 4 2 + 1 = 17</math>.
-                <br> <br>
-                Dados o seu domínio e o seu contradomínio, uma função é univocamente representada pelo conjunto de todos os pares <math>(x, f(x))</math>, chamado de gráfico da função, um meio popular de ilustrar a função.
-                Quando o domínio e o contradomínio são conjuntos de números reais, cada um desses pares pode ser pensado como as coordenadas cartesianas de um ponto no plano.
-            </p>
-        </footer>
+        <div id="shortcuts" class="inter">
+            <a href="func-plot.html" id="box1">
+                <article>
+                    <h2>Calculadora Grafica de Função</h2>
+                    <p>Uma calculadora de funções baseada em javascript, capaz de produzir o grafico de qualquer função em notação padrão</p>
+                </article>
+            </a>
+            <a href="func-types.html" id="box2">
+                <article>
+                    <h2>Tipos de Função</h2>
+                    <p>Uma descrição breve dos três principais tipos de função</p>
+                </article>
+            </a>
+        </div>
     </div>
-        
-    <div class="menu" class="intel-mono">
-        <article>MENU</article>
-        <article>—</article>
-        <a href="index.html">PÁGINA PRINCIPAL</a>
-        <article>—</article>
-        <a href="func-plot.html">CALCULADORA GRÁFICA</a>
-        <article>—</article>
-        <a href="func-types.html">TIPOS DE FUNÇÃO</a>
-
-        <a id="about-me" href="about-me.html">SOBRE MIM</a>
-    </div>
-    <div id="warning"><strong>para melhor visualização desta pagina use o Firefox.</strong></div>
-
+    
+    <div class="shine-background" id="shineBg"></div>
 </body>
 </html>

@@ -5,66 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="types.css">
+    <link rel="stylesheet" href="menu.css">
     <script defer src="main.js"></script>
     <title>Tipos de função</title>
+    <!--Fonts import-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!--Fonts import end-->
 </head>
 <body>
-    <div id="types" class="inter">
-        <main>
-            <div id="box1" onclick="select_afim()">
-                <h1>Função afim</h1>
-                <p>
-                    Uma função afim, também conhecida como função polinomial de grau 1 ou função polinomial de primeiro grau é uma função do tipo <math>f(x) = ax + b</math>,
-                    cujo gráfico é uma reta não perpendicular ao eixo <math>O x</math>. Tal função também pode ser entendida como uma transformação linear (<math>Ax</math>)
-                    seguida por uma translação <math>(+ b)</math>.
-                </p>
-            </div>
-            <div id="box2" onclick="select_quad()">
-                <h1>Função quadrática</h1>
-                <p>
-                    Por exemplo, uma função quadrática univariada (variável única) tem a forma:
-                    <math>f ( x ) = ax² + bx + c , a ≠ 0</math>
-                    na única variável x . O gráfico de uma função quadrática univariada é uma parábola cujo eixo de simetria é paralelo ao eixo y.
-                    Se a função quadrática for definida como zero, o resultado será uma equação quadrática. As soluções para a equação univariada são chamadas de raízes da função univariada.
-                </p>
-            </div>
-            <div id="box3" onclick="select_mod()">
-                <h1>Função modular</h1>
-                <p>
-                    O módulo ou valor absoluto (representado matematicamente como <math>| a |</math>) de um número real <math>a</math> é o seu valor numérico absoluto, ou seja,
-                    desconsiderando-se seu sinal. Está associado à ideia de distância de um ponto até sua origem (o zero), ou seja, a sua magnitude.
-                </p>
-            </div>
-        </main>  
-        <div id="enlarged" onclick="hide_all_select()">
-            <h1 id="enlarged title">Hello world</h1>
-            <p id="enlarged text-afim">
-                Uma função afim, também conhecida como função polinomial de grau 1 ou função polinomial de primeiro grau é uma função do tipo <math>f(x) = ax + b</math>,
-                cujo gráfico é uma reta não perpendicular ao eixo <math>O x</math>. Tal função também pode ser entendida como uma transformação linear (<math>Ax</math>)
-                seguida por uma translação <math>(+ b)</math>.
-            </p>
-            <p id="enlarged text-quadratica">
-                Por exemplo, uma função quadrática univariada (variável única) tem a forma:
-                <math>f ( x ) = ax² + bx + c , a ≠ 0</math>
-                na única variável x . O gráfico de uma função quadrática univariada é uma parábola cujo eixo de simetria é paralelo ao eixo y.
-                Se a função quadrática for definida como zero, o resultado será uma equação quadrática. As soluções para a equação univariada são chamadas de raízes da função univariada.
-            </p>
-            <p id="enlarged text-modular">
-                O módulo ou valor absoluto (representado matematicamente como <math>| a |</math>) de um número real <math>a</math> é o seu valor numérico absoluto, ou seja,
-                desconsiderando-se seu sinal. Está associado à ideia de distância de um ponto até sua origem (o zero), ou seja, a sua magnitude.
-            </p>
-        </div>      
-    </div>
+    <div class="menu intel-mono">
+        <article id="menu" class="select-background">MENU<div></div></article>
+        <article>—</article>
+        <a href="index.html" class="select-background">PÁGINA PRINCIPAL<div></div></a>
+        <article>—</article>
+        <a href="func-plot.html" class="select-background">CALCULADORA GRÁFICA<div></div></a>
+        <article>—</article>
+        <a href="func-types.html" class="select-background">TIPOS DE FUNÇÃO<div></div></a>
 
-    <div class="menu" class="intel-mono">
-        <article>MENU</article>
-        <article>—</article>
-        <a href="index.html">PÁGINA PRINCIPAL</a>
-        <article>—</article>
-        <a href="func-plot.html">CALCULADORA GRÁFICA</a>
-        <article>—</article>
-        <a href="func-types.html">TIPOS DE FUNÇÃO</a>
         <a id="about-me" href="about-me.html">SOBRE MIM</a>
     </div>
+
+    <div id="content" class="inter">
+        <main>
+            <article id="box1">
+                <h1>Função afim</h1>
+            </article>
+
+            <article id="box2">
+                <h1>Função quadrática</h1>
+            </article>
+
+            <article id="box3">
+                <h1>Função modular</h1>
+            </article>
+        </main>
+    </div>
+    <div class="shine-background" id="shineBg"></div>
 </body>
 </html>
