@@ -8,6 +8,9 @@ let dropdown = document.getElementById("dropdown")
 let shine = document.getElementById("shineBg")
 var mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 var glow = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+var localMouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+var localGlow = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+let shineOBJ = document.querySelectorAll(".shineLocal-OBJ")
 
 function hideCommon() {
     document.getElementById("commonDefTxt").style.display = "none";
@@ -32,31 +35,27 @@ function displayelement() {
     en.style.display = "block";
 }
 
-// if (navigator.userAgent.toLowerCase().includes("firefox")) {
-//     document.getElementById("warning").style.display = "none";
-//     document.getElementById("popupOverlay").style.display = "none";
-// }
 function menuButton() {
     dropdown.classList.toggle("show-dropdown")
 }
 menu.addEventListener("click", menuButton)
 
-window.addEventListener('pointermove', (event) => {
+window.addEventListener('pointermove', (e) => {
     const speedFactor = 0.0001;
 
-    window.addEventListener('mousemove', (e) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
+    window.addEventListener('pointermove', (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
     });
 
     function animateGlow() {
-      glow.x += (mouse.x - glow.x) * speedFactor;
-      glow.y += (mouse.y - glow.y) * speedFactor;
+        glow.x += (mouse.x - glow.x) * speedFactor;
+        glow.y += (mouse.y - glow.y) * speedFactor;
 
-      shine.style.setProperty('--mouse-x', `${glow.x}px`);
-      shine.style.setProperty('--mouse-y', `${glow.y}px`);
+        shine.style.setProperty('--mouse-x', `${glow.x}px`);
+        shine.style.setProperty('--mouse-y', `${glow.y}px`);
 
-      requestAnimationFrame(animateGlow);
+        requestAnimationFrame(animateGlow);
     }
 
     animateGlow();

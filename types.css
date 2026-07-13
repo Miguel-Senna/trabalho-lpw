@@ -45,12 +45,17 @@ body {
       background-color: #ffffff0f;
       transition: all 1s;
       
-      header > h1 {
-        font-size: 50px;
+      h1 {
+        font-size: 60px;
         text-transform: uppercase;
         background-color: var(--accent-color);
         margin-left: 40px;
         margin-right: 40px;
+      }
+      p {
+        text-align: justify;
+        margin: 30px 50px;
+        font-size: larger;
       }
       &:hover {
         background-color: #ffffff1f;
@@ -106,6 +111,7 @@ main:hover {
 
 main article:hover {
   opacity: 1 !important;
+  border: 1px solid var(--accent-color) !important;
 }
 
 ::selection {
