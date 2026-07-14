@@ -55,7 +55,8 @@ body {
       p {
         text-align: justify;
         margin: 30px 50px;
-        font-size: larger;
+        font-size: x-large;
+        line-height: 1.5em;
       }
       &:hover {
         background-color: #ffffff1f;

@@ -59,7 +59,7 @@
   inset: 0;
   pointer-events: none;
   background: radial-gradient(
-    1000px circle at var(--mouse-x) var(--mouse-y),
+    var(--shine-size) circle at var(--mouse-x) var(--mouse-y),
     #e83e1c10,
     #e83e1c08 50%, 
     transparent 100%

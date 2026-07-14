@@ -11,6 +11,8 @@ var glow = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 var localMouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 var localGlow = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 let shineOBJ = document.querySelectorAll(".shineLocal-OBJ")
+let glow_strengh = 1000;
+shine.style.setProperty('--shine-size', `1000px`)
 
 function hideCommon() {
     document.getElementById("commonDefTxt").style.display = "none";
@@ -60,3 +62,9 @@ window.addEventListener('pointermove', (e) => {
 
     animateGlow();
 })
+
+window.addEventListener('mouseup', () => {glow_strengh = 1000;shine.style.setProperty('--shine-size', `${glow_strengh}px`)});
+window.addEventListener('mousedown', () => {
+    glow_strengh = 1500
+    shine.style.setProperty('--shine-size', `${glow_strengh}px`)
+});
