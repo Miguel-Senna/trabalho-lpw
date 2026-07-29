@@ -56,6 +56,7 @@ body {
 
     h1 {
       font-size: 100px;
+      text-shadow: 3px 0px var(--accent-color);
     }
   }
   main {
@@ -388,4 +389,9 @@ body {
 
 .menu {
   overflow: hidden !important;
+}
+
+.selected {
+  background-color: black !important;
+  border-top: 5px solid #303030 !important;
 }

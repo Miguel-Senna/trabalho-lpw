@@ -17,14 +17,16 @@ shine.style.setProperty('--shine-size', `1000px`)
 function hideCommon() {
     document.getElementById("commonDefTxt").style.display = "none";
     document.getElementById("formalDefTxt").style.display = "block";
-    document.getElementById("formalDef").style.backgroundColor = "black";
-    document.getElementById("commonDef").style.backgroundColor = "";
+
+    document.getElementById("commonDef").classList.remove = "selected";
+    document.getElementById("formalDef").classList.add = "selected";
 }
 function hideFormal() {
     document.getElementById("commonDefTxt").style.display = "block";
     document.getElementById("formalDefTxt").style.display = "none";
-    document.getElementById("commonDef").style.backgroundColor = "black";
-    document.getElementById("formalDef").style.backgroundColor = "";
+    
+    document.getElementById("commonDef").classList.add = "selected";
+    document.getElementById("formalDef").classList.remove = "selected";
 }
 
 // popup
