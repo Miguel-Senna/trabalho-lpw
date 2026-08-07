@@ -6,12 +6,15 @@ let enlarged_paragraph_mod = document.getElementById("enlarged text-modular")
 let menu =document.getElementById("menu")
 let dropdown = document.getElementById("dropdown")
 let shine = document.getElementById("shineBg")
-var mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-var glow = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-var localMouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-var localGlow = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+let glow = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+let localMouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+let localGlow = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 let shineOBJ = document.querySelectorAll(".shineLocal-OBJ")
-let glow_strengh = 1000;
+let glow_strengh = 15;
+let speedFactor = 0.0001;
+
+
 shine.style.setProperty('--shine-size', `1000px`)
 
 function hideCommon() {
@@ -45,7 +48,6 @@ function menuButton() {
 menu.addEventListener("click", menuButton)
 
 window.addEventListener('pointermove', (e) => {
-    const speedFactor = 0.0001;
 
     window.addEventListener('pointermove', (e) => {
         mouse.x = e.clientX;
@@ -65,8 +67,12 @@ window.addEventListener('pointermove', (e) => {
     animateGlow();
 })
 
-window.addEventListener('mouseup', () => {glow_strengh = 1000;shine.style.setProperty('--shine-size', `${glow_strengh}px`)});
+window.addEventListener('mouseup', () => {
+    glow_strengh = 15;shine.style.setProperty('--shine-size', `${glow_strengh}vw`);
+    speedFactor = 0.0001;
+});
 window.addEventListener('mousedown', () => {
-    glow_strengh = 1500
-    shine.style.setProperty('--shine-size', `${glow_strengh}px`)
+    glow_strengh = 20
+    speedFactor = 0.00001;
+    shine.style.setProperty('--shine-size', `${glow_strengh}vw`)
 });

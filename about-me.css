@@ -86,7 +86,8 @@ a {
 #creditos {
   position: absolute;
   right: 70px;
-  top: calc(50% - calc(490px / 2));
+  top: calc(50% - calc(371px / 2));
+  font-size: smaller;
   color: white;
   a {
     color: #E83E1C;

@@ -37,6 +37,7 @@ body {
     height: 95vh;
     transition: all 1s;
     perspective: 1000px;
+    backdrop-filter: blur(10px);
     article {
       transform: translateY(0px);
       text-align: center;
@@ -44,6 +45,7 @@ body {
       border-radius: 10px;
       background-color: #ffffff0f;
       transition: all 1s;
+      cursor: pointer;
       
       h1 {
         font-size: 60px;
@@ -57,6 +59,10 @@ body {
         margin: 30px 50px;
         font-size: x-large;
         line-height: 1.5em;
+        math:not(.noSpacing) {
+          font-size: smaller;
+          margin-left: 1.5vw;
+        }
       }
       &:hover {
         background-color: #ffffff1f;
